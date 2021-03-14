@@ -8,6 +8,7 @@ class LoginPage extends Page {
     /**
      * define selectors using getter methods
      */
+    get accept_pop_up () { return $('button[title="Agree"]') }
     get inputUsername () { return $('#username') }
     get inputPassword () { return $('#password') }
     get btnSubmit () { return $('button[type="submit"]') }
@@ -36,7 +37,35 @@ class LoginPage extends Page {
      * overwrite specifc options to adapt it to page object
      */
     open () {
+        // browser.setCookies({ name, value, path, domain, secure, httpOnly, expiry, sameSite })
+        // browser.deleteAllCookies()
         return super.open('login');
+    }
+
+    accept_cookies () {
+        // browser.maximizeWindow()
+        // browser.setCookies([
+        //     {name: 'test', value: '123'},
+        //     {name: 'test2', value: '456'}
+        // ])
+        // const testCookie = browser.getCookies(['test'])
+        // console.log(testCookie);
+        // browser.deleteAllCookies()
+        // console.log(browser.isAlertOpen()); 
+        // browser.switchToFrame('sp_message_iframe_450949')
+        // browser.switchToParentFrame()
+        // var my_frame = $('iframe[id="sp_message_iframe_450949"]').value;
+        // console.log(my_frame)
+        // browser.frame(my_frame);
+        // browser.switchToFrame('sp_message_iframe_450949')
+        // this.accept_pop_up.click();
+        // browser.pause(1000)
+        // console.log(browser.getWindowHandles());
+        // browser.switchToFrame(id)
+        // browser.pause(3000)
+        // this.accept_pop_up.click();
+        // browser.acceptAlert()
+        // browser.dismissAlert()
     }
 
     click_deals() {
