@@ -22,6 +22,7 @@ const pages = {
 
 Given(/^I am on the home page$/, () => {
     LoginPage.open()
+    LoginPage.accept_cookies()
 });
 
 Given(/^I am on the offers page$/, () => {
@@ -29,7 +30,6 @@ Given(/^I am on the offers page$/, () => {
 });
 
 When(/^I navigate to Deals$/, () => {
-    LoginPage.accept_cookies()
     LoginPage.click_deals()
 });
 

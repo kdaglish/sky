@@ -37,35 +37,25 @@ class LoginPage extends Page {
      * overwrite specifc options to adapt it to page object
      */
     open () {
-        // browser.setCookies({ name, value, path, domain, secure, httpOnly, expiry, sameSite })
-        // browser.deleteAllCookies()
-        return super.open('login');
+        super.open('login');
+        browser.maximizeWindow()
     }
 
     accept_cookies () {
-        // browser.maximizeWindow()
-        // browser.setCookies([
-        //     {name: 'test', value: '123'},
-        //     {name: 'test2', value: '456'}
-        // ])
-        // const testCookie = browser.getCookies(['test'])
-        // console.log(testCookie);
-        // browser.deleteAllCookies()
-        // console.log(browser.isAlertOpen()); 
-        // browser.switchToFrame('sp_message_iframe_450949')
-        // browser.switchToParentFrame()
-        // var my_frame = $('iframe[id="sp_message_iframe_450949"]').value;
-        // console.log(my_frame)
-        // browser.frame(my_frame);
-        // browser.switchToFrame('sp_message_iframe_450949')
-        // this.accept_pop_up.click();
-        // browser.pause(1000)
-        // console.log(browser.getWindowHandles());
-        // browser.switchToFrame(id)
-        // browser.pause(3000)
-        // this.accept_pop_up.click();
-        // browser.acceptAlert()
-        // browser.dismissAlert()
+        browser.setCookies([
+            {
+                domain: '.sky.com',
+                expiry: 1647304828,
+                httpOnly: false,
+                name: 'consentUUID',
+                path: '/',
+                sameSite: 'None',
+                secure: true,
+                value: '93304c20-e550-4588-bbdf-70b306d77825'
+              },
+        ])
+        super.open('login');
+        browser.maximizeWindow()
     }
 
     click_deals() {
